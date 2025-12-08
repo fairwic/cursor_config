@@ -1,0 +1,321 @@
+// 将键绑定放在此文件中以覆盖默认值
+[
+  {
+    // 光标聚焦到编辑器
+    "command": "workbench.action.focusActiveEditorGroup",
+    "key": "shift+e shift+e"
+  },
+  {
+    "command": "editor.action.quickFix",
+    "key": "alt+enter",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "command": "workbench.action.closeActiveEditor",
+    "key": "space w c",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
+  },
+  {
+    // 关闭所有编辑器窗口å
+    "command": "workbench.action.closeAllEditors",
+    "key": "space w a",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
+  },
+  // 导航操作
+  {
+    "command": "editor.action.revealDefinition",
+    "key": "space g d",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    "command": "editor.action.goToImplementation",
+    "key": "space g i",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    "command": "workbench.action.navigateBack",
+    "key": "b b",
+    "when": "editorTextFocus && canNavigateBack && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    "command": "workbench.action.navigateForward",
+    "key": "space g f",
+    "when": "editorTextFocus && canNavigateForward && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    "command": "editor.action.marker.next",
+    "key": "space g e",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    "command": "workbench.action.gotoSymbol",
+    "key": "space g s",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    // 跳转到上一个错误
+    "command": "editor.action.marker.prev",
+    "key": "space g shift+e",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    // 查看所有错误和警告列表
+    "command": "workbench.actions.view.problems",
+    "key": "space g shift+l",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  // === 调试和运行 ===
+  {
+    "command": "workbench.action.debug.start",
+    "key": "space r u n",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "workbench.action.debug.start",
+    "key": "space b u g",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "workbench.action.debug.stop",
+    "key": "space s b",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "editor.debug.action.toggleBreakpoint",
+    "key": "space b p",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  // === 终端管理 ===
+  {
+    "command": "workbench.action.terminal.toggleTerminal",
+    "key": "space t t",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "workbench.action.terminal.toggleTerminal",
+    "key": "shift+t shift+t",
+    "when": "(vim.mode == 'Normal' || neovim.mode == 'normal') && terminalFocus || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  // === 工具和设置 ===
+  {
+    "command": "editor.action.showHover",
+    "key": "space s h",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "workbench.action.openGlobalKeybindings",
+    "key": "space s k",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "workbench.action.openSettings",
+    "key": "space s s",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "workbench.action.selectTheme",
+    "key": "space s t",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  // === 搜索功能 ===
+  {
+    // 搜索当前文件
+    "command": "actions.find",
+    "key": "space s f",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    // 搜索全局文件
+    "command": "workbench.action.findInFiles",
+    "key": "space s a",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  // === 代码格式化 ===
+  {
+    "command": "editor.action.formatDocument",
+    "key": "space c f",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  {
+    "command": "editor.debug.action.toggleBreakpoint",
+    "key": "space c b",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  //移除无用的包
+  {
+    "command": "editor.action.organizeImports",
+    "key": "space c o",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+  },
+  // 代码操作
+  {
+    "command": "editor.action.rename",
+    "key": "space c r",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && (vim.mode == 'Normal' || neovim.mode == 'normal')"
+  },
+  //进入禅模式
+  {
+    "command": "workbench.action.toggleZenMode",
+    "key": "space z z",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
+  },
+  // === Git 版本控制 ===
+  {
+    "command": "workbench.view.scm",
+    "key": "space v v",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "git.checkout",
+    "key": "space v c",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "git.openChange",
+    "key": "space v d",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 生成 commit message
+    "command": "cursor.generateGitCommitMessage",
+    "key": "space v m",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 提交代码
+    "command": "git.commit",
+    "key": "space v c",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 推送代码
+    "command": "git.push",
+    "key": "space v p",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 暂存所有更改
+    "command": "git.unstageAll",
+    "key": "space v shift+a",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 暂存所有更改
+    "command": "git.stageAll",
+    "key": "space v a",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 聚焦到变更的文件列表
+    "command": "workbench.scm.focus",
+    "key": "space v l",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 从 diff 视图按 ESC 返回到变更文件列表
+    "command": "workbench.scm.focus",
+    "key": "escape",
+    "when": "isInDiffEditor && (vim.mode == 'Normal' || neovim.mode == 'normal')"
+  },
+  {
+    // 下一个此文件的改动
+    "command": "workbench.action.compareEditor.nextChange",
+    "key": "n",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 上一个文件改动
+    "command": "workbench.action.compareEditor.previousChange",
+    "key": "N",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  // === 文件浏览 ===
+  {
+    "command": "workbench.files.action.showActiveFileInExplorer",
+    "key": "space f f",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "space f o",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    //打开资源文件管理器
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "space e e",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  // === 扩展管理 ===
+  {
+    // 打开扩展面板
+    "command": "workbench.view.extensions",
+    "key": "space x x",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 搜索扩展
+    "command": "workbench.extensions.action.showPopularExtensions",
+
+    "key": "space x s",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 管理已安装的扩展
+    "command": "workbench.extensions.action.listInstalledExtensions",
+    "key": "space x i",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 打开最近项目
+    "command": "workbench.action.openRecent",
+    "key": "space p o",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    //打开文件夹
+    "command": "workbench.action.files.openFolder",
+    "key": "space p n",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 刷新VS Code窗口（缓存）
+    "command": "workbench.action.reloadWindow",
+    "key": "space r w",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    // 重启语言服务器
+    "command": "typescript.restartTsServer",
+    "key": "space r l",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "composerMode.agent"
+  },
+  {
+    //移除无用的包
+    "key": "space c o",
+    "command": "-editor.action.organizeImports",
+    "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+  },
+  //聚焦到下一个搜索结果
+  {
+    "key": "n",
+    "command": "search.action.focusNextSearchResult",
+    "when": "hasSearchResult && inSearchEditor"
+  },
+  //聚焦到上一个搜索结果
+  {
+    "command": "N",
+    "key": "space s down",
+    "when": "hasSearchResult && inSearchEditor"
+  },
+  //聚焦到上一个搜索结果
+  {
+    "command": "search.action.focusNextSearchResult",
+    "key": "enter",
+    "when": "hasSearchResult && inSearchEditor"
+  }
+]
