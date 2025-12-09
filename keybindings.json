@@ -97,22 +97,26 @@
     "when": "(vim.mode == 'Normal' || neovim.mode == 'normal') && terminalFocus || (!editorFocus && !inputFocus && !textInputFocus)"
   },
   // === 工具和设置 ===
+  // 显示悬浮窗
   {
     "command": "editor.action.showHover",
     "key": "space s h",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
   {
+    // 打开全局快捷键
     "command": "workbench.action.openGlobalKeybindings",
     "key": "space s k",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
   {
+    // 打开设置
     "command": "workbench.action.openSettings",
     "key": "space s s",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
   {
+    // 选择主题
     "command": "workbench.action.selectTheme",
     "key": "space s t",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
@@ -136,18 +140,19 @@
     "key": "space c f",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
   },
+  // 切换断点
   {
     "command": "editor.debug.action.toggleBreakpoint",
     "key": "space c b",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
   },
-  //移除无用的包
+  // 组织导入
   {
     "command": "editor.action.organizeImports",
     "key": "space c o",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
   },
-  // 代码操作
+  // 重命名
   {
     "command": "editor.action.rename",
     "key": "space c r",
@@ -160,21 +165,25 @@
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // === Git 版本控制 ===
+  // 显示Git版本控制
   {
     "command": "workbench.view.scm",
     "key": "space v v",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
+  // 切换分支
   {
     "command": "git.checkout",
     "key": "space v c",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
+  // 打开变更
   {
     "command": "git.openChange",
     "key": "space v d",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
+  // 生成 commit message
   {
     // 生成 commit message
     "command": "cursor.generateGitCommitMessage",
@@ -276,7 +285,7 @@
     "command": "workbench.action.newWindow",
     "key": "space p w",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
-  }, 
+  },
   {
     //打开文件夹
     "command": "workbench.action.files.openFolder",
