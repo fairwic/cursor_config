@@ -3,7 +3,7 @@
   {
     // 光标聚焦到编辑器
     "command": "workbench.action.focusActiveEditorGroup",
-    "key": "shift+e shift+e"
+    "key": "ctrl+e ctrl+e"
   },
   {
     "command": "editor.action.quickFix",
@@ -221,13 +221,13 @@
     // 下一个此文件的改动
     "command": "workbench.action.compareEditor.nextChange",
     "key": "n",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+    "when": "isInDiffEditor && editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   {
     // 上一个文件改动
     "command": "workbench.action.compareEditor.previousChange",
     "key": "N",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+    "when": "isInDiffEditor && editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // === 文件浏览 ===
   {
@@ -256,7 +256,6 @@
   {
     // 搜索扩展
     "command": "workbench.extensions.action.showPopularExtensions",
-
     "key": "space x s",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
@@ -272,6 +271,12 @@
     "key": "space p o",
     "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
   },
+  //新建窗口
+  {
+    "command": "workbench.action.newWindow",
+    "key": "space p w",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || (!editorFocus && !inputFocus && !textInputFocus)"
+  }, 
   {
     //打开文件夹
     "command": "workbench.action.files.openFolder",
