@@ -230,13 +230,13 @@
     // 下一个此文件的改动
     "command": "workbench.action.compareEditor.nextChange",
     "key": "n",
-    "when": "isInDiffEditor && editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
+    "when": "isInDiffEditor && editorTextFocus && !(editorHasSelection || editorHasMultipleSelections || textInputFocus || inputFocus) && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   {
     // 上一个文件改动
     "command": "workbench.action.compareEditor.previousChange",
     "key": "N",
-    "when": "isInDiffEditor && editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
+    "when": "isInDiffEditor && editorTextFocus && !(editorHasSelection || editorHasMultipleSelections || textInputFocus || inputFocus) && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // === 文件浏览 ===
   {
@@ -310,26 +310,14 @@
   },
   {
     //移除无用的包
-    "key": "space c o",
     "command": "-editor.action.organizeImports",
+    "key": "space c o",
     "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
   },
   //聚焦到下一个搜索结果
   {
-    "key": "n",
     "command": "search.action.focusNextSearchResult",
-    "when": "hasSearchResult && inSearchEditor"
-  },
-  //聚焦到上一个搜索结果
-  {
-    "command": "N",
-    "key": "space s down",
-    "when": "hasSearchResult && inSearchEditor"
-  },
-  //聚焦到上一个搜索结果
-  {
-    "command": "search.action.focusNextSearchResult",
-    "key": "enter",
-    "when": "hasSearchResult && inSearchEditor"
+    "key": "shift+enter",
+    "when": "inSearchEditor"
   }
 ]
