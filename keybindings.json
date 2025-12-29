@@ -37,25 +37,25 @@
   {
     "command": "editor.action.marker.next",
     "key": "space g e",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // 跳转到符号
   {
     "command": "workbench.action.gotoSymbol",
     "key": "space g s",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   {
     // 跳转到上一个错误
     "command": "editor.action.marker.prev",
     "key": "space g shift+e",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   {
     // 查看所有错误和警告列表
     "command": "workbench.actions.view.problems",
     "key": "space g shift+l",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // === 调试和运行 ===
   {
@@ -76,7 +76,7 @@
   {
     "command": "editor.debug.action.toggleBreakpoint",
     "key": "space b p",
-    "when": "!terminalFocus && (editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || !editorTextFocus)"
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // === 终端管理 ===
   {
@@ -94,7 +94,7 @@
   {
     "command": "editor.action.showHover",
     "key": "space s h",
-    "when": "!terminalFocus && (editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') || !editorTextFocus)"
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   {
     // 打开全局快捷键
@@ -119,7 +119,7 @@
     // 搜索当前文件
     "command": "actions.find",
     "key": "space s f",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   {
     // 搜索全局文件
@@ -131,19 +131,19 @@
   {
     "command": "editor.action.formatDocument",
     "key": "space c f",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // 切换断点
   {
     "command": "editor.debug.action.toggleBreakpoint",
     "key": "space c b",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // 组织导入
   {
     "command": "editor.action.organizeImports",
     "key": "space c o",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || neovim.mode == 'normal') "
+    "when": "editorTextFocus && !terminalFocus && (vim.mode == 'Normal' || neovim.mode == 'normal')"
   },
   // 重命名
   {
