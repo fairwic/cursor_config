@@ -1,0 +1,53 @@
+[
+    // context Workspace  Editor AgentSpane
+    {
+        "context": "Workspace",
+        "bindings": {
+            // "shift shift": "file_finder::Toggle"
+        },
+    },
+    {
+        "context": "vim_mode == normal",
+        "bindings": {
+            // "shift shift": "file_finder::Toggle"
+            "space r u n": "debugger::Start",
+            "space s t o p": "debugger::Stop",
+            "space r l": "debugger::Restart",
+            //workspace
+            "space p w": "workspace::NewWindow",
+            "space p n": "workspace::Open",
+            //project
+            "space p o": "projects::OpenRecent",
+            "space p s": "project_panel::ToggleFocus",
+        },
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            // "j k": "vim::NormalBefore"
+        },
+    },
+    {
+        "context": "Editor && vim_mode == normal",
+        "bindings": {
+            "space l r": "editor::RestartLanguageServer",
+            "space c l": "workspace::ToggleLeftDock",
+            "space f f": "pane::RevealInProjectPanel",
+            "space v v": "git_panel::ToggleFocus",
+            "space s t": "theme_selector::Toggle",
+            "space s x": "zed::Extensions",
+            "space s k": "zed::OpenKeymap",
+            "space s s": "zed::OpenSettings",
+            "space s -": "zed::OpenSettingsFile",
+            "space c i": "pane::CloseActiveItem",
+        },
+    },
+    {
+        "context": "Teminal",
+        "bindings": {
+            // "j k": "vim::NormalBefore"
+            "space t t": "terminal_panel::Toggle",
+        },
+    },
+]
+

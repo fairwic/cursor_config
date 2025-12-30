@@ -1,0 +1,81 @@
+{
+    "auto_update": false,
+    "agent": {
+        "always_allow_tool_actions": true,
+        "default_model": {
+            "provider": "google",
+            "model": "gemini-2.5-flash",
+        },
+        "model_parameters": [],
+    },
+    "icon_theme": "Material Icon Theme",
+    "theme": "VSCode Dark Modern",
+    "enable_language_server": true,
+    "languages": {
+        "Java": {
+            "enable_language_server": true,
+            // "JAVA_HOME": "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home",
+            // "PATH": "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home/bin:${PATH}",
+        },
+    },
+    "vim_mode": true,
+    "telemetry": {
+        "diagnostics": true,
+        "metrics": true,
+    },
+    // "proxy": "http://127.0.0.1:8001",
+    "minimap": {
+        "show": "auto",
+    },
+    "autosave": {
+        "after_delay": {
+            "milliseconds": 1000,
+        },
+    },
+    "file_types": {},
+    "ensure_final_newline_on_save": true,
+    "wrap_guides": [100],
+    "tab_size": 4,
+    "base_keymap": "VSCode",
+    "ui_font_size": 16,
+    "buffer_font_size": 15,
+    "lsp": {
+        "jdtls": {
+            // ✅ 关键：initialization_options 必须在这里，与 settings 平级
+            "initialization_options": {
+                "bundles": [
+                    "/Users/mac2/Library/Application Support/Zed/extensions/work/java/debugger/com.microsoft.java.debug.plugin-0.53.2.jar",
+                ],
+                // ✅ 优化后的 JVM 参数：针对 JDK 21 优化的 ZGC 策略
+                "vmargs": "-Xmx4G -Xms4G -XX:+UseZGC -XX:+ZGenerational -Dsun.zip.disableMemoryMapping=true -Djava.import.generatesMetadataFilesAtProjectRoot=false -Xlog:disable",
+                "settings": {
+                    "java": {
+                        "home": "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home",
+                        "maxConcurrentBuilds": 4,
+                        "autobuild": { "enabled": true },
+                        "import": {
+                            "gradle": { "enabled": true },
+                            "maven": { "enabled": true },
+                            "exclusions": [
+                                "**/node_modules/**",
+                                "**/.metadata/**",
+                                "**/target/**",
+                                "**/build/**",
+                                "/**/test/**",
+                            ],
+                        },
+                        "configuration": {
+                            "maven": { "downloadSources": false },
+                        },
+                        "referencesCodeLens": { "enabled": false },
+                        "signatureHelp": { "enabled": false },
+                    },
+                },
+            },
+            "settings": {
+                "java_home": "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home",
+            },
+        },
+    },
+}
+
